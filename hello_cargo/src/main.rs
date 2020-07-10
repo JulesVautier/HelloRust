@@ -18,7 +18,10 @@ fn main() {
             .expect("Failed to read line");
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
-            Err(_) => continue,
+            Err(e) => {
+                println!("{}", e);
+                continue;
+            },
         };
         // .expect("Please type a number!");
 
